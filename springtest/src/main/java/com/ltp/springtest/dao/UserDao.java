@@ -19,6 +19,7 @@ public class UserDao {
 //		System.out.println("========name:"+name+"=="+user.getName()+",--"+user.getId());
 //		System.out.println(user.hashCode()+"==="+user2.hashCode()+user.equals(user2));
 //		System.out.println(user2.getName());
+System.out.println(user2.getName());
 	}
 	
 	public UserDao(String name) {
