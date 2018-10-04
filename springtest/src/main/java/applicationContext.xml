@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	
+	
+	
+	
+	<bean id="userService" class="com.ltp.springtest.service.UserService" init-method="init">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="userDao" class="com.ltp.springtest.dao.UserDao"/>
+	
+	<!-- <bean id="user" class="com.ltp.springtest.entity.User" scope="prototype">
+		<constructor-arg name = "id" value="100"/>
+		<constructor-arg name = "name" value="lilei"></constructor-arg>
+	</bean>
+	
+	<bean id="userService" class="com.ltp.springtest.service.UserService"/>
+	<bean id="userService2" class="com.ltp.springtest.service.UserService"/>
+	<bean id="userDao" class="com.ltp.springtest.dao.UserDao">
+		<constructor-arg name = "name" value="hello"/>
+		<constructor-arg name = "user" ref="user"/>
+		<constructor-arg name = "user2" ref="user"/>
+		<constructor-arg name="dream">
+	        <list>
+	            <value>soldier</value>
+	            <value>scientist</value>盛世华联 1楼营业厅  电信
+	            <value>pilot</value>
+	        </list>
+        </constructor-arg>
+	</bean>
+	
+	<bean id = "teacherDao" class = "com.ltp.springtest.dao.TeacherDao" factory-method="getInstance"/>
+	
+	<bean id="exampleBean" class="com.ltp.springtest.dao.ExampleBean">
+	    <constructor-arg index="0" value="7500000"/>
+	    <constructor-arg index="1" value="42"/>
+	    <constructor-arg name="years" value="7500000"/>
+	    <constructor-arg name="ultimateAnswer" value="42"/>
+	</bean> -->
+	
+	
+	<!-- 构造器方式进行注入 -->
+	<!-- <bean id="a" class="com.ltp.springtest.dao.StudentA">
+		<constructor-arg index="0" ref="b"></constructor-arg>
+	</bean>
+	<bean id="b" class="com.ltp.springtest.dao.StudentB">
+		<constructor-arg index="0" ref="c"></constructor-arg>
+	</bean>
+	<bean id="c" class="com.ltp.springtest.dao.StudentC">
+		<constructor-arg index="0" ref="a"></constructor-arg>
+	</bean>  -->
+	
+		<!--scope="singleton"(默认就是单例方式)  -->
+	<!-- <bean id="a" class="com.ltp.springtest.dao.StudentA" scope="singleton">
+		<property name="studentB" ref="b"></property>
+	</bean>
+	<bean id="b" class="com.ltp.springtest.dao.StudentB" scope="singleton">
+		<property name="studentC" ref="c"></property>
+	</bean>
+	<bean id="c" class="com.ltp.springtest.dao.StudentC" scope="singleton">
+		<property name="studentA" ref="a"></property>
+	</bean> -->
+	
+	
+	<!-- <context:component-scan base-package="com.ltp.springtest.*"/> -->
+	
+	<!-- <bean id="user" class="com.ltp.springtest.entity.User"/>
+	
+	<bean id="userService" class="com.ltp.springtest.service.UserService"/>
+	<bean id="userDao" class="com.ltp.springtest.dao.UserDao">
+		<constructor-arg name = "name" value="hello"/>
+		<constructor-arg name = "user" ref="user"/>
+		<constructor-arg name="dream">
+	        <list>
+	            <value>soldier</value>
+	            <value>scientist</value>
+	            <value>pilot</value>
+	        </list>
+        </constructor-arg>
+	</bean> -->
+	
+	<!-- <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="50" />
+		<property name="maxTotal" value="100" />
+		<property name="maxWaitMillis" value="20000" />
+	</bean>
+
+	<bean id="stringRedisSerializer"
+		class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+
+	<bean id="connectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="localhost" />
+		<property name="port" value="6379" />
+		<property name="poolConfig" ref="poolConfig" />
+	</bean>
+
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="defaultSerializer" ref="stringRedisSerializer" />
+		<property name="keySerializer" ref="stringRedisSerializer" />
+		<property name="valueSerializer" ref="stringRedisSerializer" />
+	</bean> -->
+
+
+</beans>

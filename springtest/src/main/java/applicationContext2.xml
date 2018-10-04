@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<bean id="derivedTestBean" class="org.springframework.beans.DerivedTestBean" init-method="initialize"/>
+	
+	<bean id="postProcessorB" class="org.springframework.beans.PostProcessorB"/>
+	<bean id="postProcessor" class="org.springframework.beans.PostProcessor"/>
+	
+	<!-- <bean id="inheritsWithDifferentClass"
+        class="org.springframework.beans.DerivedTestBean" init-method="initialize">
+	</bean> -->
+	
+	<!-- <bean id="inheritedTestBean" abstract="true" class="org.springframework.beans.TestBean">
+		<property name="name" value="parent"/>
+    	<property name="age" value="1"/>
+	</bean>
+	<bean id="inheritsWithDifferentClass"
+        class="org.springframework.beans.DerivedTestBean"
+        parent="inheritedTestBean" init-method="initialize">
+    <property name="name" value="override"/>
+    the age property value of 1 will be inherited from parent
+	</bean> -->
+
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations" value="classpath:jdbc.properties"/>
+	</bean>
+	
+	<bean id="dataSource" destroy-method="close"
+	        class="org.apache.commons.dbcp.BasicDataSource">
+	    <property name="driverClassName" value="${jdbc.driverClassName}"/>
+	    <property name="url" value="${jdbc.url}"/>
+	    <property name="username" value="${jdbc.username}"/>
+	    <property name="password" value="${jdbc.password}"/>
+	</bean> -->
+
+</beans>
